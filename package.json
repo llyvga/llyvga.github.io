@@ -1,15 +1,33 @@
 {
-  "name": "vue-demo",
+  "name": "ui-demo-popup",
   "version": "0.1.0",
-  "private": true,
+  "description": "第一个弹窗演示组件库",
+  "main": "dist/index.umd.js",
+  "keywords": [
+    "ui-demo",
+    "vue",
+    "ui"
+  ],
+  "author": "lileyan",
+  "files": [
+    "dist",
+    "components"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "npm run build:js && npm run build:css",
+    "lint": "vue-cli-service lint",
+    "build:js": "webpack --config ./webpack.component.js",
+    "build:css": "npx gulp sass",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^2.6.14"
+    "m-popup-dialog": "^1.0.3",
+    "vue": "^2.6.14",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -19,7 +37,14 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "vue-template-compiler": "^2.6.14"
+    "gulp": "^4.0.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^7.3.1",
+    "vue-template-compiler": "^2.6.14",
+    "vuepress": "^1.9.7",
+    "webpack-cli": "^4.10.0"
   },
   "eslintConfig": {
     "root": true,

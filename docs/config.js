@@ -1,0 +1,20 @@
+module.exports={
+    title:"ui-demo-popup",
+    base:"/llyvga.github.io/",
+    themeConfig:{
+        nav:[
+            {
+              text:'Home',link:'/'
+            },{
+               text:'Github',link:'https://github.com/llyvga/llyvga.github.io/tree/master'
+            },
+            {
+                text:'npm',link:"https://www.npmjs.com/package/ui-demo-popup"
+            }
+        ],
+        sidebar:[
+            ',',
+            '/componentDocs/popup'
+        ]
+    }
+}

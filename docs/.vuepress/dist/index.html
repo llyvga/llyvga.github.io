@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Popup</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.f2b6a6c9.css" as="style"><link rel="preload" href="/assets/js/app.37917781.js" as="script"><link rel="preload" href="/assets/js/2.640092ae.js" as="script"><link rel="preload" href="/assets/js/8.7dbcdba7.js" as="script"><link rel="prefetch" href="/assets/js/3.eae3747a.js"><link rel="prefetch" href="/assets/js/4.55b56ddd.js"><link rel="prefetch" href="/assets/js/5.cf031052.js"><link rel="prefetch" href="/assets/js/6.cd130aba.js"><link rel="prefetch" href="/assets/js/7.acfba0df.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f2b6a6c9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" aria-current="page" class="home-link router-link-exact-active router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="popup"><a href="#popup" class="header-anchor">#</a> Popup</h1> <h3 id="弹窗组件"><a href="#弹窗组件" class="header-anchor">#</a> 弹窗组件</h3> <h4 id="安装组件库"><a href="#安装组件库" class="header-anchor">#</a> 安装组件库</h4> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> i ui-demo-popup
+</code></pre></div><h4 id="引用组件库"><a href="#引用组件库" class="header-anchor">#</a> 引用组件库</h4> <blockquote><p>在 main.js 中引入组件库</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 全部引入</span>
+<span class="token keyword">import</span> <span class="token string">'ui-demo-popup/dist/css/index.css'</span>
+<span class="token keyword">import</span> <span class="token constant">UI</span> <span class="token keyword">from</span> <span class="token string">'ui-demo-popup'</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token constant">UI</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 按需引入</span>
+<span class="token keyword">import</span> <span class="token string">'ui-demo-popup/dist/css/popup.css'</span>
+<span class="token keyword">import</span> Popup <span class="token keyword">from</span> <span class="token string">'ui-demo-popup'</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Popup<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="示例"><a href="#示例" class="header-anchor">#</a> 示例</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">&lt;</span>popup title<span class="token operator">=</span><span class="token string">&quot;add message&quot;</span> <span class="token operator">:</span>btn<span class="token operator">=</span><span class="token string">&quot;1&quot;</span> <span class="token operator">:</span>showModule<span class="token operator">=</span><span class="token string">&quot;showModule&quot;</span> submitBtn<span class="token operator">=</span><span class="token string">&quot;submit&quot;</span> cancelBtn<span class="token operator">=</span><span class="token string">&quot;cancel&quot;</span> @cancel<span class="token operator">=</span><span class="token string">&quot;showModule = false&quot;</span> @submit<span class="token operator">=</span><span class="token string">&quot;submit&quot;</span> themeColor<span class="token operator">=</span><span class="token string">&quot;#ff6600&quot;</span><span class="token operator">&gt;</span>
+
+  <span class="token operator">&lt;</span>template v<span class="token operator">-</span>slot<span class="token operator">:</span>body<span class="token operator">&gt;</span>
+
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token operator">...</span><span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+
+  <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>popup<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="代码"><a href="#代码" class="header-anchor">#</a> 代码</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> Popup <span class="token keyword">from</span> <span class="token string">'@/components/module/popup.vue'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'xxx'</span><span class="token punctuation">,</span>
+
+  <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+
+    Popup<span class="token punctuation">,</span>
+
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+
+      <span class="token literal-property property">showModule</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
+    <span class="token punctuation">}</span>
+
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+
+    <span class="token function">submit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+      <span class="token comment">// event...</span>
+
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="attributes"><a href="#attributes" class="header-anchor">#</a> Attributes</h3> <table><thead><tr><th>参数</th> <th>说明</th> <th>类型</th> <th>可选值</th> <th>默认值</th></tr></thead> <tbody><tr><td>size</td> <td>弹框预设大小选择</td> <td>string</td> <td>small / middle / large / form</td> <td>form</td></tr> <tr><td>title</td> <td>弹框顶部标题</td> <td>string</td> <td>-</td> <td>warning</td></tr> <tr><td>btn</td> <td>底部按钮类型</td> <td>number</td> <td>1 确定 / 2 取消 / 3 确定&amp;取消</td> <td>3</td></tr> <tr><td>submitBtn</td> <td>确定按钮文本</td> <td>string</td> <td>-</td> <td>submit</td></tr> <tr><td>cancelBtn</td> <td>取消按钮文本</td> <td>string</td> <td>-</td> <td>cancel</td></tr> <tr><td>mask</td> <td>是否显示遮罩层</td> <td>boolean</td> <td>true / false</td> <td>truel</td></tr> <tr><td>transition</td> <td>选择弹框显示/隐藏的动画效果</td> <td>string</td> <td>top 从上方渐入渐出 / fade 淡入淡出</td> <td>top</td></tr> <tr><td>themeColor</td> <td>设置主题色（头部、底部按钮背景色）</td> <td>string</td> <td>-</td> <td>#cc6699</td></tr> <tr><td>showModule</td> <td>设置弹框显示隐藏的变量</td> <td>boolean</td> <td>-</td> <td>-</td></tr></tbody></table> <h3 id="events"><a href="#events" class="header-anchor">#</a> Events</h3> <table><thead><tr><th>事件</th> <th>说明</th></tr></thead> <tbody><tr><td>submit</td> <td>点击确认按钮触发的事件</td></tr> <tr><td>cancel</td> <td>点击取消按钮 / 右上角 “x” 触发的事件</td></tr></tbody></table></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.37917781.js" defer></script><script src="/assets/js/2.640092ae.js" defer></script><script src="/assets/js/8.7dbcdba7.js" defer></script>
+  </body>
+</html>
